@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "ictcrm": {
+      "command": "npx",
+      "args": ["-y", "ictcrm-mcp"],
+      "env": {
+        "ICTCRM_BASE_URL": "https://your-ictcrm",
+        "ICTCRM_USERNAME": "admin",
+        "ICTCRM_PASSWORD": "your-password"
+      }
+    }
+  }
+}

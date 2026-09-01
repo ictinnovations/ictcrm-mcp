@@ -1,0 +1,68 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ictinnovations/ictcrm-mcp",
+  "description": "Read CRM contact groups and manage contacts on ICTCRM (ICTContact backend).",
+  "repository": {
+    "url": "https://github.com/ictinnovations/ictcrm-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "websiteUrl": "https://ictcrm.com",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "ictcrm-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ICTCRM_BASE_URL",
+          "description": "Base URL of your ICTCRM server, without the /rest suffix, e.g. https://your-ictcontact.",
+          "isRequired": true,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "ICTCRM_USERNAME",
+          "description": "API account username.",
+          "isRequired": true,
+          "isSecret": false,
+          "format": "string"
+        },
+        {
+          "name": "ICTCRM_PASSWORD",
+          "description": "Password for the account.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "ICTCRM_MCP_ALLOW_WRITE",
+          "description": "Unlocks starting and stopping campaigns, which begins live outbound calling and can cost money. When false those tools are not registered at all. Leave off unless you mean it.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "boolean",
+          "default": "false"
+        },
+        {
+          "name": "ICTCRM_TIMEOUT_MS",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "number",
+          "default": "30000"
+        },
+        {
+          "name": "ICTCRM_TLS_INSECURE",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "boolean",
+          "default": "false"
+        }
+      ]
+    }
+  ]
+}
